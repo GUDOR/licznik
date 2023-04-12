@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            
+            background-color: #000000;
+            background-image: url(http://www.transparenttextures.com/patterns/argyle.png);
+        }
+
+        textarea{
+            width: 80%;
+            height: 50px;
+            display: block;
+            margin: auto;
+            margin-bottom: 5px;
+            margin-top: 50px;
+            background-color: gainsboro;
+            border: 2px solid orangered;
+            padding: 5px;
+            
+            
+            
+            
+            
+            
+            
+        }
+
+        #text{
+            width: 80%;
+            margin: auto;
+            border: 2px solid white;
+            text-align: center;
+            color: wheat ;
+            font-weight: bold;
+            padding: 5px;
+            background-color: black;
+            background-image: url(http://www.transparenttextures.com/patterns/argyle.png);
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <textarea></textarea>
+    <div id="text">
+        <div>Ilość znaków: <span id="num-char"></span></div><br>
+        <div>Ilość słów: <span id="num-words"></span></div><br>
+        <div>Ilość zdań: <span id="num-sentences"></span></div>
+    </div>
+    
+
+    <script>
+        
+        let textarea = document.getElementsByTagName("textarea")[0];
+
+        textarea.addEventListener("input",onChange);
+
+        function onChange(){
+            const data = textarea.value;
+            const numChar = data.length;
+            const numWords = data.split(" ").length ;
+            const numSentences = data.split(".").length - 1;
+
+            document.getElementById("num-char").innerHTML = numChar;
+            
+            document.getElementById("num-words").innerHTML = numWords;
+
+            document.getElementById("num-sentences").innerHTML = numSentences;
+
+        }
+       
+
+      
+
+    </script>
+
+
+</body>
+</html>
